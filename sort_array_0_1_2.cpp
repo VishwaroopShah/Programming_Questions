@@ -10,7 +10,6 @@ void swap(int A[], int pos1, int pos2) {
 }
 
 void sortTheArray(int A[], int arraySize) {
-    //int arrayElements = sizeof(A)/sizeof(A[0]);
     //A[0] to A[low -1] : contains 0,
     //A[low] to A[mid -1] : contains 1,
     //A[mid] to A[high] : contains 2,
@@ -33,7 +32,6 @@ void sortTheArray(int A[], int arraySize) {
 }
 
 void printTheArray(int A[], int arraySize) {
-    //int arraySize = sizeof(A)/sizeof(A[0]);
     //cout << "array size" << arraySize;
     for(int i = 0; i < arraySize; i++) {
         cout << A[i] << " ";
