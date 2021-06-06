@@ -32,7 +32,6 @@ void sortTheArray(int A[], int arraySize) {
 }
 
 void printTheArray(int A[], int arraySize) {
-    //cout << "array size" << arraySize;
     for(int i = 0; i < arraySize; i++) {
         cout << A[i] << " ";
     }
