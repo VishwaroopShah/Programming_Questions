@@ -31,3 +31,23 @@ int Solution::perfectPeak(vector<int> &A) {
     }
     return 0;
 }
+
+//Approach 2:
+int Solution::perfectPeak(vector<int> &A) {
+    int n = A.size();
+    int maxArray[n], minArray[n];
+    maxArray[0] = A[0];
+    minArray[n-1] = A[n-1];
+    for(int i = 1; i < A.size(); i++) {
+        maxArray[i] = fmax(maxArray[i-1], A[i]);
+    }
+    for(int i = n -1-1; i >= 0; i--) {
+        minArray[i] = fmin(minArray[i+1], A[i]);
+    }
+    for(int i = 1 ; i <= n-1-1; i++) {
+        if(A[i] > maxArray[i-1] && A[i] < minArray[i+1]){
+            return 1;
+        }
+    }
+    return 0;
+}
