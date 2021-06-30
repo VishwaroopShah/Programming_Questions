@@ -1,0 +1,33 @@
+//Question 1:  https://www.interviewbit.com/problems/perfect-peak-of-array/
+
+//Approach 1: 
+int Solution::perfectPeak(vector<int> &A) {
+    if(A.size() < 3){
+        return 0;
+    }
+    for(int i = 1; i < A.size() - 1; i++) {
+        int lPtr= i - 1 ;
+        int rPtr = i + 1;
+        bool left = true;
+        bool right = true;
+        while(lPtr >= 0){
+            if(A[lPtr]>=A[i] ){
+                left = false;
+                break;
+            }
+            lPtr -= 1;
+        }
+        while(rPtr < A.size() && left){
+            if(A[rPtr]<=A[i]){
+                right = false;
+                break;
+            }
+            rPtr += 1;
+        }
+
+        if(left == true && right == true){
+            return 1;
+        }
+    }
+    return 0;
+}
